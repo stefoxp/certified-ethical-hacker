@@ -181,9 +181,38 @@ When this malicious input is processed by the weakly configured XML parser of a 
 
 ![XML External Entity](img/xxe.png "XML External Entity")
 
-- A5 - Broken Access Control
-- A6 - Security Misconfiguration
-- A7 - Cross-Site Scripting (XSS)
+### A5 - Broken Access Control
+
+... is a combination of:
+
+- insecure direct object reference.
+When developers expose various internal implementation objects such as files, directories, database records, or key-through references.
+- missing function level access control.
+In some web applications, function level protection is managed via configuration. The main targets of the attackers in this scenario are the administrative functions. Developers must include proper code checks to prevent such attacks.
+
+### A6 - Security Misconfiguration
+
+... can occur at any level of an application stack.
+Problems:
+
+- un-validated inputs
+If web applications implement input validation only on the client side, attackers can easily bypass it.
+- parameter or form tampering
+- improper error handling
+The attacker can gather the following information from improper error handling:
+  - Null pointer exceptions
+  - System call failure
+  - Database unavailable
+  - Network timeout
+  - Database information
+  - Web application logical flow
+  - Application environment
+- insufficient transport layer protection (supports weak algorithms, and uses expired or invalid certificates)
+
+### A7 - Cross-Site Scripting (XSS)
+
+
+
 - A8 - Insecure De-serialization
 - A9 - Using Components with Known Vulnerabilities
 - A10 - Insufficient Logging and Monitoring
