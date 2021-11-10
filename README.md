@@ -11,3 +11,6 @@ Contributions: Issues, comments and pull requests are welcome.
 ## Modules
 
 - [14 - Hacking Web Applications](hacking_web_applications.md)
+
+- [Appendix A: Ethical Hacking Essential Concepts - I](appendix_a.md)
+- [Appendix B: Ethical Hacking Essential Concepts - II](appendix_b.md)
