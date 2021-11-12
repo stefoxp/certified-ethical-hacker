@@ -279,4 +279,143 @@ OSI model is a generic protocol-independent standard. It defines services, inter
 
 ### Types of Networks
 
-pag.3239
+Classification of networks based on the physical location or the geographical boundaries:
+
+- Local area network (LAN)
+- Wide area network (WAN)
+- Metropolitan area network (MAN)
+- Personal area network (PAN). Wireless communication that uses both radio and optical signals. Covers individual's work area or work group (room-size network)
+- Campus area network (CAN). Covers only a limited geographical area
+- Global area network (GAN). A combination of different interconnected computer networks. The Internet is an example of...
+
+### Wireless networks (WLAN)
+
+... use Radio Frequency (RF) signals and the ISEE standard of 802.11, and radio waves for communication.
+
+Advantages:
+
+- installation is easy and eliminates wiring
+- access can be from anywhere within the range of an access point
+- public places can offer constant Internet connection
+
+Limitations:
+
+- wi-fi security may not meet expectations
+- the bandwidth is impacted by the number of users
+- wi-fi standard changes may require replacing wireless components
+- some electronic equipment can interfere with the wi-fi network
+
+#### Wireless standards
+
+![Wireless standards](img/wireless_standards.png "Wireless standards")
+
+![Wireless standards 2](img/wireless_standards_2.png "Wireless standards 2")
+
+#### Wireless Technologies
+
+**Worldwide Interoperability for Microwave Access (WIMAX)** is a wireless communication standard based on the IEEE 802.16 family.
+It is a standardized wireless version of Ethernet that provides broadband access to wireless mobile.
+It works as an alternative to wire technologies.
+... signals can function over a long distance with higher data rates.
+It provides high-speed data, voice, video calls, and Internet connectivity to users.
+
+**Microwave Transmission** is a form of wireless communication that uses high frequency radio waves.
+It is widely used in point-point communications.
+... offers a very large information-carrying capacity owing to its huge bandwidth.
+A major limitation is its ability to transmit data only within line of sight.
+
+**Optical Wireless communication (OWC)**
+
+... is a form of unguided transmission through optical carriers.
+
+... uses visible, infrared (IR) and ultraviolet (UV) ranges of light:
+
+- Visible light communication (VLC)* operates in the visible band (390-750 nm). ... use light-emitting diodes.
+- Point-to-point OWC systems (known as free space optical systems) transmit at IR frequencies (750-1600 nm). ... use laser transmitters.
+- ultraviolet communication (UV) operates within the solare blind UV spectrum (200-280 nm).
+
+**2G**
+
+... is the second generation of mobile cellular network under the standard **Global system for Mobile communications (GSM)**. ... uses digitally encrypted signals.
+A combination of 2G and **GPRS** forms its advanced version, 2.5G.
+Later **Enhanced Data Rates for GSM Evolution (EDGE)**, alias 2.75G, succeeded the GPRS.
+
+**3G**
+
+... is the third-generation wireless technology that was launched as a **Universal Mobile Telecommunications Service (UMTS)** network.
+The first version is **High-Speed Packet Access (HSPA)**, the last version is **High Speed Packet Access (HSPA+)**, alias 3.5G.
+
+**4G**
+
+... known as **Long Term Evolution (LTE)**, is a fourth-generation.
+All capabilities defined by the International Telecommunication Union (ITU) and International Mobile Telecommunications-Advanced.
+... offers transmission rates of 100Mbit/s for high-mobility communication and 1Gbit/s for low-mobility communication.
+
+**Terrestrial trunked radio (Tetra)**
+
+... is a European standard that describes a professional mobile radio communication infrastructure.
+... is a standard for Private Mobile radio (PMR) and Public access mobile radio (PAMR) that is aimed at emergency users and transport services.
+The low frequency permits coverage of a large geographic area with fewer transmitters.
+
+**Bluetooth**
+
+... is a short-range (up to 10 meters) device-to-device data transmission technology.
+... transfers data at less than 1 Mbps and operates within a frequency range of 2.4 Ghz to 2,485 Ghz.
+... comes under IEEE 802.15.
+
+### Network topologies
+
+... is a specification that deals with a network's overall design and flow of its data.
+
+Types of...
+
+#### Physical
+
+The physical layout of nodes, workstations and cables.
+
+![network physical topologies](img/network_topologies_physical.png "network physical topologies")
+
+#### Logical
+
+The information flow between different components.
+
+### Network Hardware Components
+
+- Network Interface Card (NIC)
+- Repeater
+- Hub
+- Switch
+- Router
+- Bridges
+- Gateways
+
+### Types of LAN technology
+
+#### Ethernet
+
+... is the physical layer.
+... describes the number of conductors required for making the connection, determines the required performance thresholds, and offers the framework for data transmission.
+... can send data at a rate of up to 10 Mbps
+... standard is IEEE standard 802.3
+
+#### Fast Ethernet
+
+... standard is IEEE 802.3u transmits data at a minimum rate of 100 Mbit/s.
+
+3 types:
+
+1. 100BASE-TX (level 5 UTP cable)
+2. 100BASE-FX (fiber-optic cable)
+3. 100BASE-T4 (extra two wires with a level 3 UTP cable)
+
+#### Gigabit Ethernet
+
+pag.3246
+
+#### 10 Gigabit Ethernet
+
+#### Asynchronous Transfer Mode (ATM)
+
+#### Power over Ethernet (PoE)
+
+![LAN Technology specifications](img/lan_specification.png "LAN Technology specifications")
