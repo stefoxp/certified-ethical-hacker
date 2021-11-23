@@ -410,12 +410,236 @@ The information flow between different components.
 
 #### Gigabit Ethernet
 
-pag.3246
+... standard IEEE 802.3-2008 ... Ethernet frames at a speed rate of 1 gigabit per second.
+
+It is used for multimedia and Voice over IP (VOIP).
+
+... also called *Gigabit-Ethernet-over-copper* or 1000Base-T, its speed is ten times more than 100Base-T.
 
 #### 10 Gigabit Ethernet
 
+IEEE 802.3ae-2002
+
+10 gigabit per second
+
+... uses optical fiber connections.
+
 #### Asynchronous Transfer Mode (ATM)
+
+... is a cell-based fast-packet communication standard
+
+... operates on the *data link layer*
+
+... used on private long-distance networks
 
 #### Power over Ethernet (PoE)
 
+IEEE 802.3af and 802.3at
+
+... allows the Ethernet cables to supply power to network devices over existing data connection.
+
 ![LAN Technology specifications](img/lan_specification.png "LAN Technology specifications")
+
+### Common Fiber Technologies
+
+#### Fiber Optic Cable
+
+![Fiber Optic Cable](img/cable_fiber_optical.png "Fiber Optic Cable")
+
+Components:
+
+- core consists of glass or plastic with higher index of refraction
+- cladding ... but with lower refractive index
+- buffer protects the fiber from damage
+- jacket holds one or more fibers in a cable
+
+Features:
+
+- lower cost
+- wide bandwidth
+- lighter - weight and small
+- more secure
+- resistant to corrosion
+- longer life and easy to maintain
+- elimination of cross-talk
+- immune to electrostatic interference
+
+#### Coaxial Cable
+
+![Coaxial Cable](img/cable_coaxial.png "Coaxial Cable")
+
+Advantages:
+
+- cheap installation cost
+- great channel capacity
+- good bandwidth
+- easily modifiable
+- cheap production cost
+
+#### CAT 3
+
+Used in 10Base-T Ethernet
+
+Bandwidth of 16 MHz
+
+Attenuation of 11.5 dB
+
+Impedance of 100 ohms
+
+#### CAT 4
+
+Used in 10Base-T Ethernet
+
+Bandwidth of 20 MHz
+
+Attenuation of 7.5 dB
+
+Impedance of 100 ohms
+
+#### CAT 5
+
+... has a maximum length of 100 m
+
+... supports frequencies up to 100 MHz
+
+Used in suitable for 10Base-T, 100Base-TX, and 1000Base-T
+
+Bandwidth of 100 MHz
+
+Attenuation of 24.0 dB
+
+Impedance of 100 ohms
+
+#### CAT 5 e
+
+Used in fast ethernet (100 Mbps), Gigabit Ethernet (1000 Mbps), and 155 Mbps ATM
+
+Bandwidth of 350 MHz
+
+Attenuation of 24.0 dB
+
+Impedance of 100 ohms
+
+#### CAT 6
+
+Used in Gigabit Ethernet (1000 Mbps), and 10 Gigabit Ethernet (10000 Mbps)
+
+Bandwidth of 250 MHz
+
+Attenuation of 19.8 dB
+
+Impedance of 100 ohms
+
+#### 10 Base-T
+
+... has a maximum transmission speed of 10 Mbps and a maximum cable length of 100 m
+
+... uses 802.3i IEEE standard
+
+... uses 4 wires (pins 1, 2, 3, 6)
+
+#### 100 Base-T
+
+... has a maximum transmission speed of 100 Mbps
+
+... uses 802.3u IEEE standard
+
+... uses 4 wires (pins 1, 2, 3, 6)
+
+
+#### 1000 Base-T
+
+... has a maximum transmission speed of 1000 Mbps
+
+... uses 802.3ab IEEE standard
+
+... uses 8 wires (pins 1, 2, 3, 4, 5, 6, 7, 8)
+
+### TCP / IP Protocol Suite
+
+#### Application Layer: Dynamic Host Configuration Protocol (DHCP)
+
+#### Application Layer: Domain Name Server (DNS)
+
+![DNS packet format](img/dns_packet_format.png "DNS packet format")
+
+![DNS Hierarchy](img/dns_hierarchy.png "DNS Hierarchy")
+
+#### Application Layer: Domain Name System Security Extensions (DNSSEC)
+
+... is a suite of the Internet Engineering Task Force (IETF)
+... is used for securing certain types of information provided by DNS
+... works by digitally signing records for DNS lookup.
+
+It guarantees:
+
+- authenticity
+- integrity
+- the non-existence of a domain name or type
+
+It does not guarantee:
+
+- confidentiality
+- protection against Denial of Service
+
+> *Delegation Signing (DS) records* provide complete information about a signed zone file.
+
+#### Application Layer: Hypertext Transfer Protocol (HTTP)
+
+Weaknesses in HTTP:
+
+- vulnerable to man-in-the-middle attacks
+- a data sent via HTTP are not encrypted
+- can be used without any encryption or digital certificates
+
+#### Application Layer: Secure HTTP (S-HTTP)
+
+... is an alternate for the HTTPS (SSL) protocol.
+... is generally used in situations where the server requires authentication from the user.
+
+Not all browsers and servers support S-HTTP
+
+#### Application Layer: HyperText Transfer Protocol Secure (HTTPS)
+
+The connection is encrypted using the Transport Layer Security (TLS) or Secure Sockets Layer (SSL) protocol.
+
+... protects against man-in-the-middle attacks.
+
+... can be vulnerable to Decrypting RSA with Obsolete and Weakened eNcryption (DROWN) attacks. 
+
+#### Application Layer: File Transfer Protocol (FTP)
+
+TCP Port 21
+
+... uses SSL / TLS and SSH encryptions for data security.
+
+... uses two connections:
+
+- control connection
+- data connection
+
+... supports two modes of operation:
+
+- active mode (control connection is made from the client, data connection from the server)
+- passive mode (both the connections are made from the client)
+
+#### Application Layer: Secure File Transfer Protocol (SFTP)
+
+TCP Port 22
+
+#### Application Layer: Trivial File Transfer Protocol (TFTP)
+
+... only reads and writes files from or to a remote server.
+
+Weaknesses:
+
+- vulnerable to Denial of service
+- " to directory traversal
+
+#### Application Layer: Simple Mail Transfer Protocol (SMTP)
+
+pag.3261?
+
+#### Application Layer: 
+#### Application Layer: 
+#### Application Layer: 
