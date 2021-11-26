@@ -638,8 +638,120 @@ Weaknesses:
 
 #### Application Layer: Simple Mail Transfer Protocol (SMTP)
 
-pag.3261?
+TCP port 25
 
-#### Application Layer: 
-#### Application Layer: 
-#### Application Layer: 
+two types of model:
+
+- end to end
+- store and forward
+
+Features:
+
+- mail forwarding
+- mail gatewaying
+- mail relaying
+- address debugging
+- mailing list expansion
+
+Advantages:
+
+- ... provides the simplest form of communication through mail
+- quick mail delivery
+- ... is reliable for outgoing email messages
+- easy to connect. Flexible with existing applications
+- several platforms support
+- low implementation and administration cost
+
+Disadvantages:
+
+- weakest security
+- limited to 7 bit ASCII chars
+- lack the security protocols specified in X.400
+- usefulness is limited owing to its simplicity
+
+#### Application Layer: Secure Multipurpose Internet Mail Extensions (S/MIME)
+
+... is used to send digitally signed and encrypted email messages
+
+... uses **RSA** for its digital signature and **DES** for message encryption
+
+![Secure Multipurpose Internet Mail Extensions](img/s_mime.png "Secure Multipurpose Internet Mail Extensions")
+
+#### Application Layer: Pretty Good Privacy (PGP)
+
+... provides *cryptographic privacy* and authentication for network communication
+
+![Pretty Good Privacy ](img/pgp.png "Pretty Good Privacy ")
+
+|Mandatory Features                     |S/MIME v3                                  |OpenPGP                                    |
+|---                                    |---                                        |---                                        |
+|Message Format                         |Binary, Based on CMS                       |Application/Pkcs 7-mime                    |
+|Certificate Format                     |Binary, Based on X.509v3                   |Binary, Based on previous PGP              |
+|Symmetric Encryption Algorithm         |Triple DES (DES, EDE3, and CBC)            |Triple DES (DES, EDE3, and Eccentric CFB)  |
+|Signature Algorithm                    |Diffie-Hellman (X9.42) with DSS or RSA     |ElGamal with DSS                           |
+|Hash Algorithm                         |SHA-1                                      |SHA-1                                      |
+|MIME Encapsulation of Signed Data      |Choice of Multipart/signed or CMS Format   |Multipart/signed ASCII armor               |
+|MIME Encapsulation of Encrypted Data   |Application/Pkcs 7-mime                    |Multipart/Encrypted                        |
+              
+#### Application Layer: Telecommunications network (Telnet)
+
+... is a TCP/IP protocol used on a LAN that helps a user to access remote computers over a network
+
+Advantages:
+
+- logging on to a remote computer and executing programs
+- controlling web servers remotely
+- fast and efficient even when the network and system loads are high
+
+Weaknesses:
+
+- vulnerable to DoS
+- vulnerable to Packet sniffing
+- is not secure: all data in clear text
+- vulnerable to eavesdropping attacks
+
+#### Application Layer: Secure Shell (SSH)
+
+... builds a secure, encrypted tunnel for exchanging information between the network
+
+Authentication mechanism:
+
+1. simple -> user password
+2. key-based -> generate a public and a private key (ssh-keygen -t rsa)
+3. host-based
+
+#### Application Layer: Simple Object Access Protocol (SOAP)
+
+... is an XML-based messaging protocol.
+... provides data transport for web services and is independent of both platform and language
+
+... has *extensibility*, *neutrality*, *independence*
+
+... is equivalent to RPC, used in DCOM and COBRA
+
+Weaknesses:
+
+- statelessness
+- to much reliance on HTTP
+- slower than CORBA, RMI, or IIOP due to the lengthy XML format
+.. depends on WSDL and does not have any standardized mechanism for dynamic discovery of the services
+
+#### Application Layer: Simple NEtwork Management Protocol (SNMP)
+
+... manages a TCP/IP based network
+
+... can collect and manage the information about the devices (routers, hub modems, printers, bridges, switches, servers and workstations)
+
+Risks to Cisco IOS SNMP configurations:
+
+- DDoS attacks
+- SNMP Remote Code Execution
+
+#### Application Layer: Network Time Protocol (NTP)
+
+pag.3266
+
+#### Application Layer: Remote Procedure Call (RPC)
+
+#### Application Layer:
+#### Application Layer:
