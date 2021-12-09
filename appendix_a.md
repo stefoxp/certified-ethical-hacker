@@ -749,9 +749,89 @@ Risks to Cisco IOS SNMP configurations:
 
 #### Application Layer: Network Time Protocol (NTP)
 
-pag.3266
+... is used to synchronize the clock times of computer in a network
+
+The NTP client initiates a time request exchange with the NTP server
+
+Features:
+
+- uses UTC as a reference time
+- highly scalable
+
+Weaknesses:
+
+- vulnerable to DoS and DDoS attacks
+- intruders can intercept the packets between an authentic client and server
+- intruders can replay one or more packets
 
 #### Application Layer: Remote Procedure Call (RPC)
 
-#### Application Layer:
-#### Application Layer:
+... is a protocol that allows inter-process communication between client and server without having to understand the network's details.
+
+Recent RPC vulnerabilities on Windows and Linux platform:
+
+- Microsoft Windows RPC Security Bypass
+- Microsoft RPC DCOM Interface Overflow
+- Microsoft Windows RPC CVE-2017-8461 Remote Code Execution
+- Multiple Linux Vendor rpc.statd Remote Format String
+- Port 111 rpcbind
+
+#### Application Layer: Server Message Block (SMB) Protocol
+
+... is used to provide shared access to files, printers, serial ports, and other
+
+... provides an authenticated inter-process communication mechanism
+
+... works through a client-server approach
+
+The Microsoft SMB Protocol is often used with is NetBIOS over TCP/IP (NBT).
+
+The enhanced version of ... called Common Internet File System (CIFS) was developed by Microsoft for open use on the Internet.
+
+#### Application Layer: Session Initiation Protocol (SIP)
+
+... is used for signaling and controlling real-time multimedia sessions that involve communication applications
+
+... determines user attributes like user location, user availability, user capability, session setup and session management.
+
+#### Application Layer: Remote Authentication Dial-In User Service (RADIUS)
+
+... provides centralized authentication, authorization, and accounting (AAA) for the remote access servers to communicate with the central server.
+
+Authentication Steps:
+
+![RADIUS Authentication](img/radius_authentication.png "RADIUS Authentication")
+
+Accounting Steps:
+
+![RADIUS Accounting](img/radius_accounting.png "RADIUS Accounting")
+
+#### Application Layer: Terminal Access Controller Access-Control System Plus (TACACS+)
+
+... is used for AAA for network devices like switches, routers, and firewalls through one or more centralized servers.
+
+... encrypts the entire communication
+
+Security issues:
+
+- no integrity checking
+- vulnerable to replay attacks
+- accounting information is sent in clear text
+- weak encryption
+
+#### Application Layer: Routing Information Protocol (RIP)
+
+... is a Distance Vector routing protocol
+
+... uses Internet Protocol (IP)
+
+Features:
+
+- performs IP and IPX routing
+- makes use of UDP port 520
+- the administrative distance of RIP routes is 120
+- has a maximum hopcount of 15 hops
+
+#### Transport Layer: Transmission Control Protocol (TCP)
+
+pag.3270
