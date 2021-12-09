@@ -834,4 +834,128 @@ Features:
 
 #### Transport Layer: Transmission Control Protocol (TCP)
 
-pag.3270
+... breaks messages into segments, reassembles them at the destination station, and resends the packets that are not received at the destination.
+
+Protocols that use TCP include:
+
+- FTP
+- HTTP
+- Telnet
+- SMTP
+
+TCP header format:
+
+![TCP header format](img/tcp_header_format.png "TCP header format")
+
+Services:
+
+1. Simplex
+Each flow has its own window size, sequence numbers, and acknowledgement numbers.
+2. Half-duplex
+Allows sending information in both directions but only one direction can be utilized at a time.
+3. Full-duplex
+Allows data flow in each direction, independent of the other direction.
+
+#### Transport Layer: User Datagram Protocol (UDP)
+
+... is a connection-less transport protocol that exchange datagrams without acknowledgements or guaranteed delivery.
+
+... not uses windowing or acknowledgements
+
+Protocols that use UDP include:
+
+- TFTP
+- SNMP
+- DHCP
+
+#### Transport Layer: Secure Socket Layer (SSL)
+
+... developed by Netscape for managing the security of message transmission on the Internet.
+
+... is used to provide a secure authentication mechanism between two communicating applications.
+
+... requires a reliable transport protocol, such as TCP, for data transmission.
+
+... uses **RSA asymmetric (public key) encryption**.
+
+#### Transport Layer: Transport Layer Security (TLS)
+
+... is used to establish a secure connection and ensure the privacy and integrity of information during transmission.
+
+... uses a symmetric key for bulk encryption, an asymmetric key for authentication and key exchange, and message authentication codes for messages integrity.
+
+... uses the RSA algorithm with 1024-bit and 2048-bit strengths
+
+#### Internet Layer: Internet Protocol (IP)
+
+... is a fundamental network layer protocol in the TCP / IP protocol suite.
+It is primarily responsible for sending datagrams across network boundaries.
+
+IP header format:
+
+![IP header format](img/ip_header_format.png "IP header format")
+
+... has a protocol field that specifies whether the segment is TCP or UDP
+
+#### Internet Layer: IPv6
+
+... also called IPng, next generation protocol
+
+- it can store a larger address space in comparison to IPv4
+- contains both *addressing* and *controlling data* or *information* to route packets for next-generation Internet
+- has more security features built into its foundation than IPv4
+
+Features:
+
+- expandable address space and routing capabilities
+- scalable to new users and services
+- auto configuration ability
+- mobility
+- end-to-end security
+- extension headers
+- authentication and privacy
+- support for source demand routing
+- quality of service (QoS)
+
+IPv6 header format:
+
+![IPv6 header format](img/ipv6_header.png "IPv6 header format")
+
+IP transition mechanism:
+
+![IP transition mechanism](img/ip_transition_mechanism.png "IP transition mechanism")
+
+The transitions can be used in any combination.
+
+IPv4 vs IPv6
+
+![IPv4 vs IPv6](img/ipv4_vs_ipv6.png "IPv4 vs IPv6")
+
+#### Internet Layer: Internet Protocol Security (IPsec)
+
+... is a set of protocols, developed by Internet Engineering Task Force (IETF) to support the secure exchange of packets at the IP layer.
+
+... ensures interoperable **cryptographically-based security** for IP protocols, and supports network-level peer authentication, data origin authentication, data integrity, data confidentiality, and replay protection.
+
+... is widely used to implement **virtual private networks**
+
+#### Internet Layer: Internet Control Message Protocol (ICMP)
+
+... is an unreliable method for the delivery of network data.
+It does not notify the sender of failed data transmission.
+... is the component of the TCP / IP protocol stack that addresses this basic limitation of IP.
+... does not overcome the unreliability issues in IP
+
+When datagram delivery errors occur, ICMP reports the errors back to the source.
+
+ICMP messages are encapsulated into the datagram.
+Encapsulation uses the same technique IP uses to deliver data.
+Error reports could generate more error reports.
+This causes increased congestion within an already ailing network.
+It is possible to have a datagram delivery error that is never reported back to the sender of the data.
+
+![Format of ICMP message](img/icmp_message_format.png "Format of ICMP message")
+
+#### Internet Layer: Address Resolution Protocol (ARP)
+
+pag.3280
