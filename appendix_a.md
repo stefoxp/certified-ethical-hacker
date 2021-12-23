@@ -546,7 +546,6 @@ Impedance of 100 ohms
 
 ... uses 4 wires (pins 1, 2, 3, 6)
 
-
 #### 1000 Base-T
 
 ... has a maximum transmission speed of 1000 Mbps
@@ -958,4 +957,101 @@ It is possible to have a datagram delivery error that is never reported back to 
 
 #### Internet Layer: Address Resolution Protocol (ARP)
 
-pag.3280
+... is a stateless protocol used for resolving IP addresses to machine (MAC) addresses.
+
+An ... request is *broadcast* over the network, whereas the response is a *unicast* message to the requester.
+
+The IP address and MAC pair are stored in the system, switch, or router's *ARP cache*, through which the ARP reply passes.
+
+![ARP](img/arp.png "ARP")
+
+#### Internet Layer: Interior Gateway Routing Protocol (IGRP)
+
+... is a Distance-Vector protocol, developed for transmitting routing data within the Internet networks
+
+... calculates the distance metric by using Bandwidth and Delay of the Line, by default.
+
+Characteristics:
+
+- periodic routing updates every 90 seconds
+- includes a full routing table after every periodic update
+- broadcast updates
+- neighbors
+- defines the finest path to a specific destination through the Bellman-Ford Distance Vector algorithm
+
+Features:
+
+- performs only IP routing
+- makes use of IP protocol 9
+- the administrative distance of IGRP routes is 100
+- has a maximum of 100 hops, by default
+
+#### Internet Layer: Enhanced Interior Gateway Routing Protocol (EIGRP)
+
+Hybrid routing protocol: Distance-Vector and Link-State routing protocols.
+
+... ...
+
+#### Internet Layer: Open Shortest Path First (OSPF)
+
+An Interior Gateway Protocol (IGP) for the Internet
+
+It is also a link-state routing protocol.
+
+Creates and maintains three different tables:
+
+1. neighbor table
+2. topology table
+3. routing table
+
+#### Internet Layer: Hot Standby Router Protocol (HSRP)
+
+A Cisco-developed redundancy protocol used to etablish a fault-tolerant default gateway.
+
+It is designed for multi access or broadcast LAN.
+
+It gets automatically self updated when the MAC address is modified.
+
+It can be vulnerable to DoS attacks.
+
+#### Internet Layer: Virtual Router Redundancy Protocol (VRRP)
+
+... provides for automatic assignment of available Internet Protocol (IP) routers to participating hosts.
+
+... provides information on the state of a router.
+
+If the physical router that is routing packets on behalf of the virtual router fails, another physical router is selected automatically to replace it.
+
+#### Internet Layer: Border Gateway Protocol (BGP)
+
+... manage packets across the internet through the exchange of information between host gateways or autonomous systems.
+
+BGP4 is the current version for internet routing. It helps Internet service providers (ISPs) to determine the routing of packets between each other.
+
+#### Link Layer: Fiber Distributed Data Interface (FDDI)
+
+... supports voice and multimedia communication
+
+The optical standard for transferring data by means of fiber optics lines in a LAN up to 200 km
+
+Transfers data at the rate of 100 Mbps
+
+Composed of two fiber optic rings:
+
+- primary works in the network
+- secondary acts as backup and takes the position of primary ring in the case of network failure
+
+**Token ring**
+
+LAN that connects multiple computers using a transmission link in either a **ring topology** or **star topology**.
+
+Data flow is always **unidirectional**.
+
+#### Link Layer: Cisco Discovery Protocol (CDP)
+#### Link Layer: VLAN Trunking Protocol (VTP)
+#### Link Layer: Spanning Tree Protocol (STP)
+#### Link Layer: Point-to-point Protocol (PPP)
+
+#### IP Addressing and Port Numbers: Internet Assigned Numbers Authority (IANA) 
+
+pag. 3288
