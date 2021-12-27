@@ -1054,4 +1054,433 @@ Data flow is always **unidirectional**.
 
 #### IP Addressing and Port Numbers: Internet Assigned Numbers Authority (IANA) 
 
-pag. 3288
+IANA is responsible for the global coordination of DNS Root, IP addressing and other Internet protocol resources.
+
+The well-known ports are assigned by IANA and can only be used by the system (or root) processes or by programs executed by privileged users on most systems.
+
+The registered ports are listed by the IANA and can be used by ordinary user processes or programs executed by ordinary users on most systems.
+
+The IANA registers the uses of these ports as a convenience to the community.
+
+The range for assigned ports managed by the IANA is **0-1023**.
+
+#### IP Addressing
+
+An IP Address is a unique numeric value assigned to a node or a network connection:
+
+- 32-bit binary number
+- set of four numbers or octets ranging between 0 to 255
+- numbers are separated by periods
+- known as dotted-decimal notation
+
+#### Classful IP Addressing
+
+IP addresses are divided into 5 major classes
+
+... was the first addressing scheme of the Internet, it managed addressing through classes A, B, C, D, E
+
+An IP address can be broken down into two parts:
+
+- the first part represents the network
+- the second part represents a specific host on the network
+
+#### Address Classes
+
+- A
+ - 8-bit network prefix
+ - starts with binary address 0, the decimal number can be anywhere between 1-126
+ - the first 8 bits identify the network, the remaining 24 bits specify hosts
+- B
+  - 16-bit prefix
+  - starts with binary address 10, the decimal ... 128-191
+  - the first 16 bits identify the network
+- C
+  - 24-bit
+  - starts with 110, ... 192-223
+  - the first 24 bits
+- D
+  - starts with 1110, ... 224-239
+  - supports multi-casting
+- E
+  - starts with binary 1111, ... 240-255
+  - reserved for experimental use
+
+Classes - Networks and hosts
+
+![IP Address Classes - Networks and hosts](img/ip_network_and_host.png "IP Address Classes - Networks and hosts")
+
+Classes - Characteristics and uses
+
+![IP Address Classes - Characteristics and uses](img/ip_classes_uses.png "IP Address Classes - Characteristics and uses")
+
+#### Subnet Masking
+
+... divides the IP address of the host into network and host numbers
+
+... allows the division of Class A, B, and C into smaller segments
+
+A Variable length subnet mask (VLSM) allows two or more subnet masks to exist in the same network
+
+VLSM effectively uses IP address space in the network
+
+#### Sub-netting
+
+... allows you to divide a Class A, B, or C network into different **logical subnets**
+
+To subnet a network, use some of the bits from the host ID portion, in order to extend the natural mask:
+
+![Sub-netting](img/subnet.png "Sub-netting")
+
+#### Super-netting
+
+- class A and B addresses are in the depletion stage
+- class C provides only 256 hosts in a network
+- super-netting combines various class C addresses and creates a super network
+- it applies to class C addresses
+- also known as classless inter-domain routing (CIDR), it was invented to keep IP addresses from exhaustion
+- the super-net mask is the reverse of the subnet mask
+
+#### IPv6 Addressing
+
+Based on the standard specified by the RFC 4291.
+
+Allows multilevel sub-netting
+
+Support unicast, anycast, and multicast addresses
+
+IPv6 address space is organized in a hierarchical structure
+
+128-bit addresses
+
+Hexadecimal notation, separated by colons
+
+#### Port numbers
+
+TCP and UDP use port numbers to pass information to the upper layers
+
+Port numbers are used to keep track of different conversations crossing the network simultaneously
+
+Conversations that do not involve an application with a well-known port number are assigned port numbers that are randomly selected
+
+Some ports are reserved in TCP and UDP
+
+End systems use port numbers to select the correct application for handling the communication
+
+Assigned ranges:
+
+- numbers below 1024 are considered well-known port numbers
+- numbers above 1024 are dynamically assigned
+- registered port numbers are those registered for vendor-specific applications
+
+#### Network terminology: routing
+
+... is the process of selecting the best paths in a network to forward data packets. It is usually performed by a dedicated device
+
+The process is based on routing tables
+
+- static
+The table is manually created, maintained, and updated
+- dynamic
+The table is created, maintained, and updated by a routing protocol running on the router
+
+#### Network terminology: Network Address Translation (NAT)
+
+... is a network protocol used in IPv4 networks that allows multiple devices to connect to a public network using the same public IPv4 address.
+
+Port numbers for protocols that use internal IP addresses (TCP, UDP) remain unchanged.
+
+Benefits:
+
+- conserves IPv4 addresses
+- hides the internal network's IP
+- simplifies routing
+- supports a wide range of services
+- consumes fewer computer resources
+
+#### Network terminology: Port Address Translation (PAT)
+
+... permits different ports in multiple devices on LAN to be mapped to a single public IP address.
+
+... is also known as port overloading, port-level multiplexed NAT, or single address NAT
+
+#### Network terminology: Virtual local area network (VLAN)
+
+... is a group of networks which are **logically connected to the same wire** and communicate with each other despite being **physically located in different geographical locations**.
+
+... are configured through **software**
+
+... is cheaper than creating a routed network
+
+Advantages:
+
+- number of devices is reduced
+- managing devices become less complex
+- increases security options
+- performance and security
+- formation of virtual workgroups
+- simplified administration
+
+Disadvantages:
+
+- VLANs rely on switches to do right thing
+- packet leaks from one VLAN to the text
+- injected packets meant for an attack
+
+Security implications:
+
+- keeps host separated by VLAN and limits the number of devices that can talk to these hosts
+- increases security options
+- controls inter-VLAN routing using IP access lists
+- deploys VTP domain, VTP pruning, and password protections
+
+#### Network terminology: Shared Media Network
+
+Each node in the network shares a single channel and bandwidth for communication.
+
+Every message reaches every node in the shared media network.
+
+Advantages:
+
+- cheap
+- no switch
+- short response time
+- broadcasting or multi-casting is easy
+- simple design
+
+Disadvantages:
+
+- fixed channel bandwidth
+- need a router or gateway to go beyond each segment
+- limited distance span
+- traffic problems and collisions
+- security issues
+
+#### Network terminology: Switched Media Network
+
+Point-to-point communication is established through a dedicated line.
+
+The communication needs switches to establish direct connection.
+
+Advantages:
+
+- high bandwidth
+- no collision
+
+Disadvantages:
+
+- expensive
+- complex design
+- long response time
+- security issues
+
+### Basic Network Troubleshooting
+
+#### Unreachable Networks
+
+Network communications depends on certain basic conditions being met:
+
+- devices must have the TCP/IP protocol stack properly configured:
+  - IP address
+  - subnet mask
+  - gateway
+- router must have the TCP/IP protocol properly configured on its interfaces
+
+#### Destination Unreachable Message
+
+An ICMP destination unreachable message is sent if:
+
+- datagrams cannot be forwarded to their destinations
+- packet fragmentation is required in order to forward a packet
+- IP-related services, such FTP or web services, are unavailable
+
+#### ICMP Echo (Request) and Echo Reply
+
+```bash
+utente@host:~$ ping 192.168.1.1
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=0.379 ms
+64 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=0.328 ms
+64 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=0.262 ms
+64 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=0.253 ms
+64 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=0.359 ms
+64 bytes from 192.168.1.1: icmp_seq=6 ttl=64 time=0.277 ms
+64 bytes from 192.168.1.1: icmp_seq=7 ttl=64 time=0.268 ms
+
+--- 192.168.1.1 ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 119ms
+rtt min/avg/max/mdev = 0.253/0.303/0.379/0.051 ms
+```
+
+#### Time Exceeded Message
+
+A TTL value is defined in each datagram (IP packet).
+
+As each router processes the datagram, it decreases the TTL value by one.
+
+When the TTL of the datagram value reaches zero, the packet is discarded.
+
+ICMP uses a ... to notify the source device that the TTL of the datagram has been exceeded.
+
+#### IP parameter problem
+
+If the header of the datagram contains an error, not related of the destination host or network, an ICMP type 12 parameter problem message is sent to the source.
+
+#### ICMP Control Messages
+
+... are used to inform hosts of conditions such as:
+
+- network congestion
+- existence of a better gateway to a remote network
+
+#### ICMP redirects (type = 5, Code = 0 to 3)
+
+The default gateway only sends the ... request messages if the following conditions are met:
+
+- router is configured to send redirects
+- route for the redirect is not another ICMP redirect or default route
+- the interface through which the packet comes into the router is the same interface through the packet gets routed out
+- the subnet / network of the source IP address is the same of the next-hop IP address of the routed packet
+- datagram is not source-routed
+
+#### Troubleshooting
+
+... the network is the process of finding the issue in the computer network and diagnosing it.
+
+Typical network issues:
+
+- physical connection
+- connectivity
+- configuration
+- software
+- traffic overload
+- network IP
+
+#### Troubleshooting: IP problems
+
+- using tools, locate the devices that raised the issue
+- check the physical connections
+- LAN connectivity faults can raise network connectivity issues
+- at each hop, check whether the router is working
+- ensure the proper configuration settings of the devices
+
+#### Troubleshooting: local connectivity issues
+
+- ping the destination
+- ping the gateway
+- if ping fails, check the route followed by subnet mask
+- if is OK, check if the source is pinging a hop/router
+- if the ping fails, it could be a configuration issue or a repetitive IP issue
+- resolve repetitive IP issue by disconnecting the doubtful device
+
+#### Troubleshooting: physical connectivity issues
+
+- check for cable
+- check for faulty port
+- check for traffic overload
+
+#### Troubleshooting: routing problems
+
+- using traceroute tool locate the hop or router responsible
+- ...
+
+#### Troubleshooting: upper-layer faults
+
+Common problems:
+
+- firewall blocking the flow
+- the server or a service is down
+- authentication process issues result in the inability to access a service
+- issues with the software compatibility of the devices
+
+#### Troubleshooting: wireless network connection issues
+
+- ...
+
+#### Network troubleshooting tools
+
+![Troubleshooting tools](img/troubleshooting_tools.png "Troubleshooting tools")
+
+...
+
+**NSlookup** utility is used to lookup a specific or multiple IP address when a user can access a resource by specifying its IP address, but cannot access it by its DNS name.
+
+```bash
+$ nslookup www.google.it
+Server:		192.168.1.20
+Address:	192.168.1.20#53
+
+Non-authoritative answer:
+Name:	www.google.it
+Address: 216.58.208.131
+Name:	www.google.it
+Address: 2a00:1450:4002:807::2003
+```
+
+**Netstat** is a command line utility used to display both the incoming and outgoing traffic of TCP/IP.
+It is used to identify the services associated with user defined ports.
+
+**Pathping** is used to give detailed information about the path characteristics from a specific host to a specific destination
+
+### Virtualization
+
+pag.3312
+
+#### Characteristics
+#### Benefits
+#### Common vendor
+#### Security and concerns
+#### Virtual firewall
+#### Virtual Operating systems
+#### Virtual databases
+
+### Network File System (NFS)
+
+pag.3316
+
+### Web markup and programming languages
+
+pag.3318
+
+#### HTML
+#### XML
+#### Java
+#### .Net
+#### C#
+#### JSP
+#### ASP
+#### PHP
+#### Perl
+#### JavaScript
+#### Bash scripting
+#### PowerShell
+#### C and C++
+#### CGI
+
+### Application Development Frameworks and Their Vulnerabilities
+
+pag.3327
+
+#### .Net Framework
+#### J2EE Framework
+#### ColdFusion
+#### Ruby On Rails
+#### AJAX
+
+### Web Subcomponents
+
+pag.3331
+
+#### Thick and Thin Clients
+#### Applet
+#### Servlet
+#### ActiveX
+#### Flash application
+
+### Database connectivity
+
+pag.3334
+
+#### SQL server
+#### Microsoft Access
+#### MySQL
+#### ORACLE
