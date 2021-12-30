@@ -1423,26 +1423,111 @@ It is used to identify the services associated with user defined ports.
 
 ### Virtualization
 
-pag.3312
+After ... a hardware platform is used to run multiple operating systems and their applications.
 
 #### Characteristics
+
+1. partitioning
+2. isolation
+3. encapsulation
+
 #### Benefits
+
+- resource efficiency
+- reduced disk space consumption
+- business continuity
+- migration
+- increase in uptime
+- increased flexibility
+- improved quality of services
+- environmental benefits
+
 #### Common vendor
+
+- VMware
+- Citrix
+- Oracle
+- Microsoft
+
 #### Security and concerns
+
+Securing:
+
+- the virtual environment
+- each virtual machine at the system level
+- the virtual network
+
+Concerns:
+
+- it is difficult to monitor unusual events and anomalies due to the additional layer of infrastructure complexity
+- offline can be used as a gateway to gain access
+- the workload can easily be moved to a new virtual machine with a lower level of security
+
 #### Virtual firewall
+
+... is a software that monitor and control packets transmitted between VMs.
+Runs completely in the virtual environment.
+
+Functions in two (n.2) modes:
+
+- bridge-mode, resides at the inter-network virtual switch
+- hypervisor-mode resides at the virtual machine monitor
+
 #### Virtual Operating systems
+
+Advantages:
+
+- additional hw not required
+- efficient usage of system resources
+- replicates most major host OS's services
+
+Limitations:
+
+- it consumes many host resources
+- calls must pass through the host OS's which minimizes performance
+
 #### Virtual databases
+
+... is a type of database management system that allows users to query various databases simultaneously by treating them as a single entity.
+
+Advantages:
+
+- sharing the overload of larger db of similar environment
+- simplifies the migration of db
+- allows dynamic and automated deployment of new system instances and resources
+- increases the availability of db by isolating virtual db and switching to another when one is down
+
+Disadvantages:
+
+- require huge amounts of resources
+- creates complexity for the db admin
+- difficult solving issues with a virtual db
 
 ### Network File System (NFS)
 
-pag.3316
+... is a distributed file system protocol.
+
+The file system works on all IP-based networks and uses TCP / UDP for data access and delivery.
+
+... offers two (n.2) types of security:
+
+- host level (access control) refers to restricting certain operations when the remote user does not provide correct credentials
+- file level (operational) refers to limiting actions on the files in a mounted file system
+
+Methods of securing access controls:
+
+- root squashing. Limiting superuser access privileges
+- nosuid. Does not allow the SUID or SGID to take effect on this filesystem
+- noexec. Prevents the execution of files from this partition
 
 ### Web markup and programming languages
 
-pag.3318
-
 #### HTML
+
 #### XML
+
+Derived from Standard Generalized Markup Language (SGML).
+
 #### Java
 #### .Net
 #### C#
@@ -1450,27 +1535,80 @@ pag.3318
 #### ASP
 #### PHP
 #### Perl
+
+Practical Extraction and Report Language
+
 #### JavaScript
 #### Bash scripting
 #### PowerShell
 #### C and C++
 #### CGI
 
+Common Gateway Interface is the standard way for a web server to connect to external applications.
+
+... is supported by many web servers and is language independent.
+
 ### Application Development Frameworks and Their Vulnerabilities
 
-pag.3327
+#### .Net Framework Vulnerabilities
 
-#### .Net Framework
-#### J2EE Framework
-#### ColdFusion
-#### Ruby On Rails
-#### AJAX
+- remote code execution
+- DoS
+- feature bypass
+- modifying the framework core (.NET assembly tampering)
+
+#### J2EE Framework Vulnerabilities
+
+- bypass cross-site scripting (XSS)
+- execute arbitrary programs
+- DoS
+- Sensitive information disclosure
+
+#### ColdFusion Vulnerabilities
+
+Is built on Java and uses the Apache Tomcat J2EE container.
+
+- directory traversal
+- ColdFusion CSRF
+- ColdFusion DoS
+- Unvalidated browser input
+- CFFILE, CFFTP, and CFPOP
+
+#### Ruby On Rails Vulnerabilities
+
+- remote code execution
+- authentication bypass
+- DoS
+- directory traversal
+- XSS
+
+#### AJAX Vulnerabilities
+
+- increased attack surface
+- browser-based
+- XSS
+- mashup and widget hacks
+- CSRF
+- XML and JSON based
+- SQL injection
+- XPATH injection
 
 ### Web Subcomponents
 
-pag.3331
+Web applications have three (n.3) primary components:
+
+- web browser (or client)
+- web application server
+- database server
 
 #### Thick and Thin Clients
+
+Thin is deployed on a central server location.
+
+Thick is independent of a central processing server.
+
+Smart clients (rich clients) use web services to communicate with server-based applications.
+
 #### Applet
 #### Servlet
 #### ActiveX
@@ -1478,9 +1616,27 @@ pag.3331
 
 ### Database connectivity
 
-pag.3334
-
 #### SQL server
+
+Web application uses the following connection methods when connecting to an SQL server:
+
+- Connection string
+- OLE DB file (.UDL)
+- ODBC Data Source Name (DSN)
+
+Two (n.2) type of authentication modes:
+
+- Windows authentication
+- mixed
+
+Data controls:
+
+- data controls (DAO)
+- ADO data controls with DSN, UDL, programmatically
+- Remote Data Object (RDO)
+- ODBC direct
+- ODBC
+
 #### Microsoft Access
 #### MySQL
 #### ORACLE
