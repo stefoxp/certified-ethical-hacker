@@ -31,4 +31,4 @@ Contributions: Issues, comments and pull requests are welcome.
 - 19 - Cloud Computing
 - 20 - Cryptography
 - [Appendix A: Ethical Hacking Essential Concepts - I](appendix_a.md)
-- [Appendix B: Ethical Hacking Essential Concepts - II]
+- [Appendix B: Ethical Hacking Essential Concepts - II](appendix_b.md)
