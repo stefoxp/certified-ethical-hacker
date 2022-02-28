@@ -202,6 +202,157 @@ Contains the servers that need to be accessed from an outside network:
 
 Hosts in the DMZ can connect to external networks but hosts in the DMZ can not connect to internal networks.
 
+## Secure Network Principles
+
 ### Network virtualization (NV)
 
-pag. 3359
+... is the process of combining all the available network resources and allowing network administrators to share these resources using single administrative unit.
+
+The available bandwidth is splitting into independent channels.
+
+Why?
+
+- efficient, flexible, scalable usage of network
+- to segregating the underlay administrative domain with overlay domain
+- to accomodate the dynamic nature of server virtualization
+- to provide security and isolation of traffic and network details from one user to another
+- to cope with the virtualization techniques in other areas
+
+### Virtual Networks
+
+... are the end product of network virtualization
+
+... use a Virtual network software that is placed outside or inside a virtual server.
+
+### VLANs
+
+... are logical groupings of workstations, servers, and network devices.
+
+The purpose of ... is to create a simple network with improved security and better traffic management.
+
+## Network Security Solutions
+
+### Security Incident and Event Management (SIEM)
+
+... performs **real-time Security Operations Center** (SOC) functions like identifying, monitoring, recording, auditing, and analyzing security incidents.
+
+... **tracks suspicious end-user behavior activities**.
+
+... combines **Security Information Management** (SIM) that supports permanent storage, analysis and reporting of log data and **Security Event Management** (SEM) that deals with real-time monitoring, correlation of events, notifications, and console views.
+
+... protects an organization's IT assets from **data breaches**.
+
+![SIEM Architecture](img/siem.png "SIEM Architecture")
+
+### User Behavior Analytics (UBA)
+
+... is the process of tracking user behavior.
+
+... technologies are designed to identify variations in traffic patterns caused by user behaviors
+
+### Unified Threat Management (UTM)
+
+... allows administrator to monitor and manage the network security.
+
+... provides firewall, intrusion detection, antimalware, spam filter, load balancing, content filtering, data loss prevention, and VPN capabilities using a single UTM appliance.
+
+Advantages:
+
+- reduced complexity
+- simplicity
+- easy management
+
+Disadvantages:
+
+- single point of failure
+- single point of compromise
+
+### Load balancer
+
+... is device responsible to **distribute network traffic** across a number of servers.
+
+... can control the number of requests and protect rate-based attacks (DoS or DDoS)
+
+### Network Access Control (NAC)
+
+- authenticate users connected to network resources
+- identify devices, platforms, and operating systems
+- define a connection point for network devices
+- develop and apply security policies
+
+### Virtual Private Network (VPN)
+
+... is used to securely communicate with different computers over insecure channels.
+
+#### How VPN works
+
+A client connects to the Internet.
+
+The client initiates a VPN connection with the company's server.
+
+Endpoints must be authenticated through passwords, biometrics, personal data, or any combination of these.
+
+Once the connection is established the client can securely access the company's network.
+
+#### VPN components
+
+- VPN client
+- Network access server (NAS)
+- Tunnel Terminating Device (or VPN server)
+- VPN protocol
+
+#### VPN concentrators
+
+... is a network device used to create secure VPN connections.
+
+... acts as a VPN router.
+
+... uses tunneling protocols to negotiate security parameters, create and manage tunnels, encapsulate, transmit, or receive packets through the tunnel, and de-encapsulate them.
+
+Functions:
+
+- encrypts and decrypts data
+- authenticates users
+- manages data transfer across the tunnel
+- negotiates tunnel parameters
+- manages security keys
+- establishes tunnels
+- assigns user addresses
+- manages inbound and outbound data transfers
+
+### Secure router configuration
+
+Routers are the main gateway to the network and not designed to be security devices. They are vulnerable to different attacks.
+
+#### Router security measures
+
+- implement router policy (written, approved, and distributed)
+- returned IOS version should be checked and up-to-date
+- configure users and passwords
+- enable password encryption
+- implement access restriction on console
+- disable unnecessary services
+- properly configure necessary services such as DNS
+- shutdown unnecessary interfaces
+- identify and check the ports and protocols
+- implement ACL to limit traffic and to block addresses
+- enable logging
+- use NTP, to set the router's time of day accurately
+- logs checked, reviewed, and archived as per defined policy
+
+#### Router security policy should consist of:
+
+- password
+- authentication
+- remote access
+- filtering
+- backup
+- redundancy
+- documentation
+- physical access
+- monitoring
+- update
+
+## Data leakage
+
+pag.3369
