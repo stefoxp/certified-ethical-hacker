@@ -40,7 +40,7 @@ It consists of cloud services, a B2B layer that holds all the commercial transac
 W.S. is an application or software that is deployed over the internet.
 It uses a standard messaging protocol to enable communication between applications developed on different platform.
 
-#### Architecture
+#### Web services - Architecture
 
 Service providers offer web services. They deploy and publish service descriptions of a web service to a service registry.
 
@@ -111,9 +111,9 @@ They are prevalent in legacy code.
 
 ... malicious code through a web application.
 
-- shell injection. 
+- shell injection.
 Attacker craft an input string to gain shell access to a web server.
-- HTML embedding. 
+- HTML embedding.
 Attack used to deface websites virtually. Attacker adds extra HTML-based content.
 - file injection.
 Inject malicious code into system files.
@@ -146,7 +146,6 @@ The LDAP server processes only the first filter: (&(USER=certifiedhacker)(&)) th
 - HTML injection
 - CRLF injection
 
-
 ### A2 - Broken Authentication
 
 #### Session ID in URLs
@@ -155,7 +154,7 @@ Attackers sniff the network traffic or trick users to get session IDs and then r
 
 Example:
 
-A web application creates a session ID for the respective login when a user logs into http://www.certifiedhackershop.com. An attacker uses a sniffer to sniff the cookie that contains the session ID or tricks the user into getting the session ID. The attacker now enters the following URL in his browser's address bar:
+A web application creates a session ID for the respective login when a user logs into [http://www.certifiedhackershop.com](http://www.certifiedhackershop.com). An attacker uses a sniffer to sniff the cookie that contains the session ID or tricks the user into getting the session ID. The attacker now enters the following URL in his browser's address bar:
 
 [http://www.certifiedhackershop.com/sale/saleitems=304:jsessionid=12OMTOIDPXM0OQSABGCKLHCJUN2JV?dest=NewMexico](http://www.certifiedhackershop.com/sale/saleitems=304:jsessionid=12OMTOIDPXM0OQSABGCKLHCJUN2JV?dest=NewMexico)
 
@@ -211,7 +210,15 @@ The attacker can gather the following information from improper error handling:
 
 ### A7 - Cross-Site Scripting (XSS)
 
+... exploits vulnerabilities dynamically generated web pages
 
+... it occurs when unvalidated input data is included in dynamic content that is sent to a user's web browser
+
+... inject malicious JavaScript, VBScript, ActiveX, HTML or Flash for execution by hiding it within legitimate requests
+
+... include malicious script execution, rendering to a malicious server, exploiting user privileges, ads in hidden IFRAMES and pop-ups, data manipulation ...
+
+![XSS Attack](img/xss.png)
 
 - A8 - Insecure De-serialization
 - A9 - Using Components with Known Vulnerabilities
@@ -222,4 +229,3 @@ The attacker can gather the following information from improper error handling:
 ## Web API, Webhooks and Web Shell
 
 ## Web application security
-
