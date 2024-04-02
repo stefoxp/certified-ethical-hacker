@@ -37,3 +37,57 @@ Others:
 ### Task 4 Gather information from IoT search engines
 
 - on [www.shodan.io](www.shodan.io) search amazon. You will obtain the search results with the details of all the vulnerable IoT devices related to amazon in various countries.
+
+## Lab 02 - Perform Footprinting through web services
+
+### Task 1 Find the company's domains and sub-domains using Netcraft
+
+> [www.netcraft.com](www.netcraft.com)
+
+- click Resources -> Research Tools -> Site report
+- type the target website's URL and press "Look up"
+- in the Network section, click on the website link in the Domain field to view the subdomains
+
+Others:
+
+- Sublist3r
+- Pentest-Tools Find Subdomains on [pentest-tools.com](pentest-tools.com)
+
+### Task 2 Gather personal information using PeekYou online people search engine
+
+> [www.peekyou.com](www.peekyou.com)
+
+Others:
+
+- pipl
+- intelius
+- beenVerified
+
+### Task 3 Gather an Email List using theHarvester
+
+```bash
+
+sudo theHarvester -d microsoft.com -l 200 -b baidu
+# -d specifies the domain or company name to search
+# -l specifies the number of results
+# -b specifies the data source
+```
+
+theHarvester starts extracting the details and displays them on the screen
+
+### Task 4 Gather information using Deep and Dark web searching
+
+- install Tor Browser
+- Connect to Tor
+- search "hacker for hire" on google.com and on Tor
+- change country of VPN/Proxy on Tor
+
+On Tor, you can use also:
+
+- The Hidden Wiki
+- FakeID
+- The Paypal Cent
+
+### Task 5 Determine target OS through passive footprint
+
+> [https://search.censys.io/](https://search.censys.io/)
