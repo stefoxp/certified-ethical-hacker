@@ -91,3 +91,31 @@ On Tor, you can use also:
 ### Task 5 Determine target OS through passive footprint
 
 > [https://search.censys.io/](https://search.censys.io/)
+
+## Lab 03 - Perform footprinting through social networking sites
+
+### Task 1 Gather employees' information from Linkedin using theHarverster
+
+```bash
+sudo theHarvester -d eccouncil -l 200 -b linkedin
+# Linkedin returns [!] Invalid source.
+```
+
+### Task 2 Gather personal information from various social networking sites using Sherlock
+
+```bash
+git clone https://github.com/sherlock-project/sherlock.git
+
+pip install -r requirements.txt
+
+python3 sherlock.py satya nadella
+```
+
+Other:
+
+- Social searcher
+- UserRecon
+
+### Task 3 Gather information using Followerwonk
+
+> [https://followerwonk.com/analyze](https://followerwonk.com/analyze)
