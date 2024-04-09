@@ -207,3 +207,9 @@ Other tools:
 
 - Infoga
 - Mailtrack
+
+## Lab 06 - Perform Whois Footprinting
+
+### Task 1 Perform Whois Lookup using DomainTools
+
+> [http://whois.domaintools.com](http://whois.domaintools.com)
