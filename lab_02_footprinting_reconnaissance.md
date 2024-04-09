@@ -119,3 +119,80 @@ Other:
 ### Task 3 Gather information using Followerwonk
 
 > [https://followerwonk.com/analyze](https://followerwonk.com/analyze)
+
+## Lab 04 - Perform website Footprinting
+
+### Task 1 Gather information about a target website using ping command line utility
+
+```bash
+ping www.certifiedhacker.com
+
+# finding maximum frame size
+ping www.certifiedhacker.com -f -l 1500
+
+# if response is "Packet needs to be fragmented but DF set" type:
+ping www.certifiedhacker.com -f -l 1300
+
+# if response is positive try different values between 1300 and 1500
+ping www.certifiedhacker.com -f -l 1472
+
+# ----------------------------
+# discover what happens when Time to Live (TTL) expires
+ping www.certifiedhacker.com -i 3
+
+# try
+ping www.certifiedhacker.com -i 2 -n 1
+
+# then
+ping www.certifiedhacker.com -i 3 -n 1
+
+# this work for me (at office)
+ping www.certifiedhacker.com -i 8 -n 1
+
+```
+
+### Task 2 Gather information about a Target website using website informer
+
+> [https://website.informer.com](https://website.informer.com)
+
+Type the URL of website and click Search
+
+The search result contains information such as General info, Stats & Details and IP Whois
+
+Other tools:
+
+- Burp suite
+- Zaproxy
+
+### Task 3 Extract a Company's data using Web data extractor
+
+> [http://www.webextractor.com/](http://www.webextractor.com/)
+
+... is a software for windows
+
+- click New
+- type the Starting URL
+- check all options
+- click Ok
+- click Start
+
+... will start collecting information
+
+
+### Task 4 Mirror a Target website using HTTrack Web Site Copier
+
+... is a software
+
+### Task 5 Gather a Wordlist from the Target Website using cewl
+
+cewl is a Ruby app [https://github.com/digininja/CeWL](https://github.com/digininja/CeWL).
+
+```bash
+# -d represent the depth to spider the website and -m represents minimum word length
+cewl -d 2 -m 5 www.erdis.it
+
+# the command returns a unique wordlist from the target website is gathered
+
+# you can save the wordlist on a text file
+cewl -w wordlist.txt -d 2 -m 5 www.erdis.it
+```
