@@ -196,3 +196,14 @@ cewl -d 2 -m 5 www.erdis.it
 # you can save the wordlist on a text file
 cewl -w wordlist.txt -d 2 -m 5 www.erdis.it
 ```
+
+## Lab 05 - Perform Email Footprinting
+
+### Task 1 Gather information about a target by tracing emails using eMailTrackerPro
+
+... is a professional software
+
+Other tools:
+
+- Infoga
+- Mailtrack
