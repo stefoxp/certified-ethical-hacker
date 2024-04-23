@@ -213,3 +213,73 @@ Other tools:
 ### Task 1 Perform Whois Lookup using DomainTools
 
 > [http://whois.domaintools.com](http://whois.domaintools.com)
+
+## Lab 07 - Perform DNS Footprinting
+
+### Task 1 Gather DNS information using nslookup command line utility and online tool
+
+Launch a command prompt (windows), type nslookup and press Enter.
+
+In the nslookup interactive mode:
+
+- type set type=a and press Enter (a configures nslookup to query for the IP address of a given domain)
+- type the target domain and press enter
+- since the result returned is *non-authoritative*, you need to obtain the domain's authoritative name server
+- type set type=cname and press Enter
+- type the target domain and press enter. This return the domain's authoritative name server (primary name server) along with the mail server address (responsible mail addr)
+- since you have obtained the authoritative name server, you will need to determine the IP address of the name server
+- type set type=a and press Enter
+- type the domain's authoritative name server and press Enter. This return the IP address of the server
+- the authoritative name server stores the records associated with the domain.
+If an attacker can determine the server and obtain its associated IP address, he might attempt to exploit the server to perform attacks
+
+You can also perform the same operations using the NSLOOKUP online tool on []
+
+### Task 2 Perform reverse DNS Lookup using reverse IP domain check and DNSRecon
+
+> https://www.yougetsignal.com
+
+- Choose "Reverse IP Domain Check"
+- Enter the URL and click check
+
+On Linux:
+
+- sudo su
+- dnsrecon -r [IP range, which include the IP address of our target, from .0 to .255]
+
+## Lab 8 Perform Network Footprinting
+
+... is a process of gathering network related information of a target organization
+
+### Task 8.1 Locate the Network range
+
+[https://www.arin.net/about/welcome/region](https://www.arin.net/about/welcome/region)
+
+In the search bar enter the IP address of the target organization and press Search
+
+### Task 8.2 Perform Network tracerouting in windows and linux machines
+
+On Windows:
+
+- tracert www....
+
+On Linux:
+
+- traceroute www....
+
+### Task 8.3 Perform advanced network route tracing using path analyzer pro
+
+## Lab 9 Perform footprinting using various footprinting tools
+
+### Task 9.1 Footprinting a target using recon-ng
+
+### Task 9.2 Footprinting a target using maltego
+
+### Task 9.3 Footprinting a target using OSRFramework
+
+### Task 9.4 Footprinting a target using FOCA
+
+### Task 9.5 Footprinting a target using BillCipher
+
+### Task 9.6 Footprinting a target using OSINT Framework
+
