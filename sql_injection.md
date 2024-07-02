@@ -233,3 +233,8 @@ FROM all_users A, all_users B, all_users C
 
 Attackers use different communication channels to perform the attack and obtain the results.
 
+1. the attacker needs to communicate with the server and acquire features of the database server used by the web application
+2. attackers use different communication channels to perform the attack and obtain the results
+3. attackers use DNS and HTTP requests to retrieve data from the db server
+4. for example, in a Microsoft SQL server, an attacker exploits the xp_dirtree command to send DNS requests to a server controlled by the attacker.
+In Oracle db, an attacker may use the UTL_HTTP package to send HTTP requests from SQL or PL/SQL to a server
