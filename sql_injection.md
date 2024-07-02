@@ -169,6 +169,66 @@ DROP TABLE DEPT;
 
 The attacker has no error messages from the system to work on. He simply sends a malicious SQL query to the db.
 
+#### time-based SQL injection
+
+... evaluates the time delay that occurs in response to true or false queries sent to the database
+
+![SQL injection time-based](img/sql_injection_time-based.png)
+
+#### Boolean exploitation
+
+Multiple valid statements that evaluate true and false are supplied in the affected parameter in the HTTP request
+
+By comparing the response page between both conditions, the attackers can infer whether or not the injection was successful
+
+Example:
+
+http://www.myshop.com/item.aspx?id=67
+
+An attacker can manipulate the above request to:
+
+http://www.myshop.com/item.aspx?id=67 and 1=2
+
+```sql
+-- SQL Query Executed
+SELECT Name, Price, Description
+FROM ITEM_DATA
+WHERE ITEM_ID = 67 AND 1 = 2
+```
+
+If the result of the above query is FALSE, no items will be displayed on the web page. Then, the attacker changes the above request to
+
+http://www.myshop.com/item.aspx?id=67 and 1=1
+
+```sql
+-- SQL Query Executed
+SELECT Name, Price, Description
+FROM ITEM_DATA
+WHERE ITEM_ID = 67 AND 1 = 1
+```
+
+If the result of the above query returns TRUE, then the details of the item with id=67 are displayed.
+
+#### Heavy query
+
+Attackers use heavy queries to perform a time delay SQL injection attack without using time delay functions.
+
+A heavy query retrieves a significant amount of data and takes a long time to execute in the database engine.
+
+Attackers generate heavy queries using multiple joins on system tables.
+
+```sql
+SELECT *
+FROM products
+WHERE id=1 AND 1 
+-- this query takes a long time to execute
+< SELECT count(*) 
+FROM all_users A, all_users B, all_users C
+
+-- the attacker injects the id parameter with
+1 AND 1 < SELECT count(*) FROM all_users A, all_users B, all_users C
+```
+
 ### Out-of-band
 
 Attackers use different communication channels to perform the attack and obtain the results.
