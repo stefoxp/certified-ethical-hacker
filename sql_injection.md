@@ -238,3 +238,49 @@ Attackers use different communication channels to perform the attack and obtain 
 3. attackers use DNS and HTTP requests to retrieve data from the db server
 4. for example, in a Microsoft SQL server, an attacker exploits the xp_dirtree command to send DNS requests to a server controlled by the attacker.
 In Oracle db, an attacker may use the UTL_HTTP package to send HTTP requests from SQL or PL/SQL to a server
+
+## SQL injection methodology
+
+... consists on the following steps:
+
+- information gathering and vulnerability detection
+- launching attacks
+- compromising the entire target network
+
+### information gathering
+
+1. check if the web application connects to a **db server**
+2. list all the **input fields, hidden fields**, and post requests
+3. attempt to **inject codes** into the input fields to generate an error
+4. try to insert a **string value** where a number is expected in the input field
+5. use **UNION operator** to combine the result-set of two or more SELECT
+6. check the detailed **error messages** for a wealth of information to execute SQL injection
+
+#### Identifying data entry paths
+
+Attackers analyze GET and POST requests to identify all the input fields, hidden fields, and cookies.
+
+The attacker may use automated tools such as:
+
+- [Tamper Chrome](https://tamper.dev) is a Chrome extension
+- [Burp Suite](https://portswigger.net/burp) is a web application security testing utility that allows to inspect and modify traffic between a browser and a target application.
+
+#### Extracting information through Error Messages
+
+You can vary the attack technique depending on the type of errors found.
+
+Methods:
+
+![sql injection information gathering methods 01](img/sql_inj_info_gat_methods_01.png)
+
+![sql injection information gathering methods 02](img/sql_inj_info_gat_methods_02.png)
+
+![sql injection information gathering methods 03](img/sql_inj_info_gat_methods_03.png)
+
+#### Vulnerability detection
+
+There are standard SQL injection inputs called testing strings used by an attacker to perform SQL injection attacks.
+
+These testing strings are widely known as a cheat sheet for SQL injection.
+
+![sql injection Vulnerability detection](img/sql_inj_vulnerability_detection.png)
