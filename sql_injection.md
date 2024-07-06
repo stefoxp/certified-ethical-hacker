@@ -658,4 +658,131 @@ parm.Value = Login.Text;
 
 ### Defenses in the Application
 
-2164
+#### Input validation
+
+... helps developers to **prevent user-supplied data** influencing the logic of the code
+
+##### Whitelist validation
+
+... is an effective technique in which only the list of entities that have been **approved for secured access** are accepted.
+
+This validation is commonly implemented using regular expressions.
+
+Characters used for ... include
+
+```bash
+^\ {} () @ | ? $
+```
+
+Implementation of ... can be intricate in some cases where the inputs cannot be easily determined or if the inputs has large character sets.
+
+##### Blacklist validation
+
+... rejects all the malicious inputs that have been **disapproved for protected access**
+
+This validation is commonly implemented using regular expressions.
+
+Characters used for ... include
+
+```bash
+'|%|--|;|/\*\\\*|_|\[|@|xp_
+```
+
+The best method for preventing SQL injection attacks is using blacklisting along with the output encoding technique.
+
+#### Output encoding
+
+... is used to encode the input to ensure it is **properly sanitized** before being passed to the database
+
+```java
+myQuery = myQuery.replace("'", "\'");
+```
+
+A major drawback of ... is that the input needs to be encoded every time before it is supplied to the database query.
+
+#### Enforcing least privileges
+
+Minimum privileges should be assigned to the operating system where the database management system runs, and the **DBMS should never be run as root**
+
+### Detecting SQL injection attacks
+
+The regular expressions mentioned belove checks for attacks that may contain **SQL specific meta-characters** (' or --) with any text inside and their hex equivalents.
+
+```bash
+# detection of SQL meta-characters
+# /(\')|(\%27)|(\-\-)|(#)|(\%23)/ix
+
+# modified version
+# /((\%3D)|(=))[^\n]*((\%27)|(\')|(\-\-)|(|%3B)|(;))/ix
+
+# for typical SQL injection attack
+# /\w* ((\%27)|(\')) ((\%6F)|o|(\%4F)((\%72)|r|(\%52))/ix
+
+# for detecting SQL injection with the UNION keyword
+# /((\%27)|(\'))union/ix
+
+# for detecting attacks on a MS SQL Server
+# /exec(\s|\+)+(s|x)p\w+/ix
+```
+
+|Characters|Explanation                        |
+|----------|-----------------------------------|
+|\\'       |Single-quote char                  |
+|\|        |or                                 |
+|\\%27     |Hex equivalent of single-quote char|
+|\\-\\-    |Double-dash                        |
+|#         |Hash or pound char                 |
+|\\%23     |Hex equivalent of hash char        |
+|i         |Case-insensitive                   |
+|x         |Ignore white spaces in pattern     |
+|\\%3D     |Hex equivalent of = char           |
+|\\%3B     |Hex equivalent of ; char           |
+|\\%6F     |Hew equivalent of o char           |
+|\\%4F     |Hex equivalent of O char           |
+|\\%72     |Hex equivalent of r char           |
+|\\%52     |Hex equivalent of R char           |
+
+#### Detection tools
+
+##### OWASP ZAP
+
+> [https://www.owasp.org]
+
+OWASP Zed Attack Proxy is an integrated penetration testing tool for finding vulnerabilities in web applications.
+
+It offers automated scanners as well as a set of tools that allow you to find security vulnerabilities manually.
+
+##### Damn Small SQLi Scanner (DSSS)
+
+> [https://github.com/stamparm/DSSS]
+
+... is a fully functional SQL injection vulnerability scanner.
+
+##### Snort
+
+> [https://snort.org]
+
+Many common attacks use a specific type of code sequence or command that allows attackers to gain unauthorized access to the target's system and data.
+These commands and code sequences allow a user to write Snort rules that aim to detect SQL injection attacks.
+
+Some of the expressions that can be blocked by Snort are as follows:
+
+```bash
+# detection of SQL meta-characters
+# /(\')|(\%27)|(\-\-)|(#)|(\%23)/ix
+
+# for detecting attacks on a MS SQL Server
+# /exec(\s|\+)+(s|x)p\w+/ix
+
+# for detecting SQL injection with the UNION keyword
+# /((\%27)|(\'))union/ix
+
+# for typical SQL injection attack
+# /\w* ((\%27)|(\')) ((\%6F)|o|(\%4F)((\%72)|r|(\%52))/ix
+
+alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS(msg:"SQL Injection - Paranoid"; flow:to_server,established;uricontent:".p1";pcre:"/(\%27)|(\')|(\-\-)|(%23)|(#)/i"; classtype:Web-application-attack; sid:9099;rev:5
+```
+
+##### Other tools
+
+![Other detection tools](img/sql_inj_detection_tools.png)
