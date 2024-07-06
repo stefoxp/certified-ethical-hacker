@@ -48,7 +48,7 @@ Contributions: Issues, comments and pull requests are welcome.
 - 12 - Evading IDS, Firewalls, and Honeypots
 - 13 - Hacking Web Servers
 - 14 - Hacking Web Applications
-- 15 - SQL Injection
+- [15 - SQL Injection](lab_15_sql_injection.md)
 - 16 - Hacking Wireless Networks
 - 17 - Hacking Mobile Platforms
 - 18 - IoT and OT Hacking
